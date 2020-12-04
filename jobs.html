@@ -6,8 +6,32 @@
     <title>My interactive CV - JOBS</title>
   </head>
   <body style="text-align: center">
+      <div class="topnav" id="myTopnav">
+        <a class="active" href="#/home">Home</a>
+        <a href="https://rgelmini.github.io/jobs">Jobs</a>
+        <a href="https://rgelmini.github.io/education">Education</a>
+        <a href="https://rgelmini.github.io/interests">Interests</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+                </a>
+    </div>
       <h1>JOBS</h1>
-      <p>C# Basics</p><a href="rgelmini.github.io/cSharpBasics.pdf" target="_blank">PDF.</a>
+      <h1>Public relations</h1>
+      <p>Maritime Transport : <a href="https://www.etf-europe.org/resource/etf-response-to-the-public-consultation-on-the-mid-term-review-of-the-eu-maritime-transport-strategy/" target="_blank">ETF response to the Public consultation on the Mid-term review of the EU Maritime Transport Strategy</a></p>
+      <p>Maritime Transport : <a href="https://www.etf-europe.org/social-partners-present-training-toolkit-to-eradicate-bullying-and-harassment-in-shipping/" target="_blank">ETF training toolkit to eradicate bullying and harassment in shipping</a>
+          <p>Fisheries : <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014R0508&from=EN" target="_blank">Amendments to the regulation on fisheries funds to ensure that better working conditions for fishermen were an objective well taken into account in the final version of the text</a>
+       <h1>Programming</h1>
+      <h2>Training</h2>
+        <p>C# Basics : <a href="rgelmini.github.io/cSharpBasics.pdf" target="_blank">Basic course on C# / mettre document updater</a></p>
+        <p>Object-Oriented Programming : <a href="rgelmini.github.io/cSharpBasics.pdf" target="_blank">Basic course on OPP / mettre bon lien et document updater</a></p>
+      <h2>Development</h2>
+        <p>Escape Game in Augmented Reality : <a href="http://www.laras.be/news.php" target="_blank">Project for I Love Science Festival 2020 (cancelled because of Covid19)</a></p>
+        <p>Roller Coaster Simulation : <a href="http://www.laras.be/news.php" target="_blank">Demontsrator for Virtual Reality technology / mettre lien vers vidéo</a></p>
+      <h2>Project Management</h2>
+        <p>Paragliding simulation : <a href="https://www.youtube.com/watch?v=xg-A5Hr1gwY&t=27s" target="_blank">Project for I Love Science Festival 2019</a></p>
+      
+
+
       <p>Instructions</p>  
       <p>HTML code for WebGL Unity Build</p>  
     <canvas id="unity-canvas" style="width: 900px; height: 600px; background: #231F20"></canvas>
@@ -24,4 +48,16 @@
       });
     </script>
   </body>
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+        x.className = "topnav";
+        }
+}
+</script>
 </html>
