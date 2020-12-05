@@ -1,3 +1,15 @@
+.mainStyle {
+    font-family: sans-serif;
+    
+}
+
+a.button {
+    appearance: button;
+  font-size: 25px;
+    text-decoration: none;
+    color: initial;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -6,13 +18,15 @@
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
+  font-family: sans-serif;
+    float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  width:22.5%
 }
 
 /* Change the color of links on hover */
