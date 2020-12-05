@@ -5,9 +5,10 @@
 
 a.button {
     appearance: button;
-  font-size: 25px;
+  font-size: 90px;
     text-decoration: none;
     color: initial;
+    padding: 14px 16px;
 }
 
 /* Add a black background color to the top navigation */
