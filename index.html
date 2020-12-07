@@ -1,38 +1,11 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
+<html lang="en-us"> 
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>My interactive CV</title>
   </head>
-    
-    <style>
-.btn-group button {
-  background-color: #4CAF50; /* Green background */
-  border: 1px solid green; /* Green border */
-  color: white; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /* Float the buttons side by side */
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #3e8e41;
-}
-</style>
-    
+   
   <body class ="mainStyle">
       <div class="topnav" id="myTopnav">
         <a class="active" href="https://rgelmini.github.io/">Home</a>
@@ -40,17 +13,33 @@
         <a href="https://rgelmini.github.io/education">Education</a>
         <a href="https://rgelmini.github.io/interests">Interests</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-    </div>     
-      <h1>Hello World, welcome to my interactive CV!</h1>
-      <p>You can discover more about me by navigating the website.<br>A series of mini games and animations are waiting for you. Categories are:</p>
-<div class="btn-group" style="width:100%">
-  <button style="width=33.3%"><a href="https://rgelmini.github.io/jobs" class="button">JOBS</a></button>
-  <button style="width=33.3%"><a href="https://rgelmini.github.io/education" class="button">EDUCATION</a></button>
-  <button style="width=33.3%"><a href="https://rgelmini.github.io/interests" class="button">INTERESTS</a></button>
+    </div>   
+       <header role="banner" style="text-align:center; font-size: 35px">
+  <h1 >Hello World, welcome to my interactive CV!</h1>
+    </header>
+      <div>
+      <p style="font-size: 35px; text-align:center; ">You can discover more about me by navigating the website.<br>A series of resources, mini games and animations are waiting for you.<br><br>Categories are:</p>
           </div>
+      <div style="width:100%; text-align: center">
+  <!--button style="width=100%"><a href="https://rgelmini.github.io/jobs" class="button">JOBS</a></button>
+  <button style="width=100%"><a href="https://rgelmini.github.io/education" class="button">EDUCATION</a></button>
+  <button style="width=100%"><a href="https://rgelmini.github.io/interests" class="button">INTERESTS</a></button>
+//-->
+          </div>
+      <h1 class="ml1">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters">JOBS *** EDUCATION *** INTERESTS</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
   </body>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
     <script>
         function myFunction() {
         var x = document.getElementById("myTopnav");
@@ -60,6 +49,34 @@
         x.className = "topnav";
         }
 }
-</script>
+
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+    </script>
 </html>
 
