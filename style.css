@@ -1,12 +1,13 @@
 .ml1 {
   font-weight: 900;
-  font-size: 3.5em;
+  font-size: 5em;
     width: 100%;
         text-align: center;
 }
 
 .ml1 .letter {
   line-height: 1em;
+    text-align: center;
 }
 
 .ml1 .text-wrapper {
@@ -14,6 +15,7 @@
   padding-top: 0.1em;
   padding-right: 0.05em;
   padding-bottom: 0.15em;
+    text-align: center;
 }
 
 .ml1 .line {
@@ -24,6 +26,7 @@
   width: 100%;
   background-color: limegreen;
   transform-origin: 50 0;
+    text-align: center;
 }
 
 .ml1 .line1 { top: 0; }
