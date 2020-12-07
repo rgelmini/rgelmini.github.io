@@ -1,13 +1,13 @@
 .ml1 {
   font-weight: 900;
-  font-size: 5em;
+  font-size: 3.5em;
     width: 100%;
         text-align: center;
 }
 
 .ml1 .letter {
   line-height: 1em;
-    text-align: center;
+  text-align: center;
 }
 
 .ml1 .text-wrapper {
