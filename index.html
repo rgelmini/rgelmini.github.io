@@ -15,6 +15,107 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            * {box-sizing: border-box}
+            body {font-family: Verdana, sans-serif; margin:0}
+            .mySlides {display: none}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+              max-width: 750px;
+              position: relative;
+              margin: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              padding: 16px;
+              margin-top: -22px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+              background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Caption text */
+            .text {
+              color: blue;
+              font-size: 15px;
+              padding: 8px 12px;
+              position: absolute;
+              bottom: 8px;
+              width: 100%;
+              text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+              color: #f2f2f2;
+              font-size: 12px;
+              padding: 8px 12px;
+              position: absolute;
+              top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+              cursor: pointer;
+              height: 15px;
+              width: 15px;
+              margin: 0 2px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+              background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+              -webkit-animation-name: fade;
+              -webkit-animation-duration: 1.5s;
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            @keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+              .prev, .next,.text {font-size: 11px}
+            }
+        </style>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -26,9 +127,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Range of Competencies</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio of Achievements</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Lifetime Milestones</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Achievements</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Milestones</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Words from Colleagues</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
@@ -59,8 +160,8 @@
         <section class="page-section" id="services">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Range of Competencies</h2>
-                    <h2 class="section-subheading text-muted">Skills and Services I Have to Offer<br>*</h2>
+                    <h2 class="section-heading text-uppercase">Skills</h2>
+                    <h3 class="section-subheading text-muted">Range of Competencies</h3>
                 </div>
                 <div class="row text-center">
                     <div class="col-md-4">
@@ -119,8 +220,8 @@
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio of Achievements</h2>
-                    <h2 class="section-subheading text-muted">Gallery of Professional Successes<br>*</h2>
+                    <h2 class="section-heading text-uppercase">Achievements</h2>
+                    <h3 class="section-subheading text-muted">Portfolio of Professional Successes</h3>
 
                 </div>
                 <div class="row">
@@ -221,8 +322,8 @@
         <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Lifetime Milestones</h2>
-                    <h3 class="section-subheading text-muted">Academic Record, Professional Experiences, and Key Events</h3>
+                    <h2 class="section-heading text-uppercase">Milestones</h2>
+                    <h3 class="section-subheading text-muted">Academic Record &amp; Professional Experiences</h3>
                 </div>
                 <ul class="timeline">
                     <li class="timeline">
@@ -330,7 +431,15 @@
                     <h2 class="section-heading text-uppercase">Words From Colleagues</h2>
                     <h3 class="section-subheading text-muted">Some Words from Colleagues and People I Collaborated With Over the Years</h3>
                 </div>
-                <div class="row">
+              <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+              <span class="dot" onclick="currentSlide(5)"></span> 
+            </div>
+                <div><p></p></div>
+                <!--div class="row">
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="assets/img/team/steve.jpg" alt="" />
@@ -353,15 +462,83 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="assets/img/team/avatar.jpg" alt="" />
+                            <img class="mx-auto rounded-circle" src="assets/img/team/nicole.jpg" alt="" />
+                            <h4>Nicole Lenoir</h4>
+                            <p class="text-muted">Training Manager @Interface3</p>
+                            <div class="text-center">
+                            <p class="text-muted">"I had the opportunity to work with Rémi to organize, plan and run a 10-days ‘Raspberry Pi &amp; Python’ summer camp for teenagers (Digital Belgium Skills Funds). Quick to adapt, he is an outstanding teacher who manages to transfer his diverse and strong IT knowledge while instilling good humor and friendliness within the group!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/christophe.jpg" alt="" />
+                            <h4>Christophe Tytgat</h4>
+                            <p class="text-muted">Secretary General @SeaEurope</p>
+                            <div class="text-center">
+                            <p class="text-muted">"I have had the real pleasure to cooperate with Rémi to elaborate two ground-breaking projects for the maritime transport sector. Rémi has a great working capacity, a listening ear and a lot of empathy. His to-the-point advice always proved to be of great assistance in moving forward on difficult points. Besides, he is also a great character with a great sense of humor."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="assets/img/team/jean.jpg" alt="" />
                             <h4>Jean De Preter</h4>
                             <p class="text-muted">Communication Manager @PSCE</p>
                             <div class="text-center">
                             <p class="text-muted">"Rémi has great professional and interpersonal skills. As I made my first steps in a new company, he trained and supported me throughout the whole process with patience and professionalism. He is very meticulous in his work and is a great guy to be around!"</p>
                             </div>
                         </div>
-                    </div>
+                    </div>                  
                 </div>
+            </div>
+        </section>
+        <section class="page-section" id="interests"-->
+        <div class="slideshow-container" style="text-align: left">
+            <div class="mySlides" style="text-align: center">
+              <img class="mx-auto rounded-circle" src="assets/img/team/steve.jpg" style="width:200px">
+              <p class="text-muted"></p>
+                <h4>Steve De Jongh</h4>
+               <p class="text-muted">Trainer @IRISIB</p>
+              <div style="min-height: 200px"><p class="text-muted" >"Rémi is an excellent trainer who transfers his knowledge with passion and humility and truly shares his expertise in a structured way. <br>He is a real team-player with strong communications skills who puts all his energy in the success of his projects."</p></div>
+            </div>
+            
+            <div class="mySlides" style="text-align: center">
+              <img class="mx-auto rounded-circle" src="assets/img/team/david.jpg" style="width:200px">
+              <p class="text-muted"></p>
+                <h4>David Collignon</h4>
+               <p class="text-muted">Educational Advisor @Bruxelles Formation</p>
+              <div style="min-height: 200px"><p class="text-muted">"Rémi is both a excellent IT trainer and an avid learner. But more important than that, he is one of the few genuinely kind and compassionate person I had the chance to work with."</p></div>
+            </div>
+            <div class="mySlides" style="text-align: center">
+              <img class="mx-auto rounded-circle" src="assets/img/team/nicole.jpg" style="width:200px">
+              <p class="text-muted"></p>
+                <h4>Nicole Lenoir</h4>
+               <p class="text-muted">Training Manager @Interface3</p>
+              <div style="min-height: 200px"><p class="text-muted">"I had the opportunity to work with Rémi to organize, plan and run a 10-days ‘Raspberry Pi &amp; Python’ summer camp for teenagers (Digital Belgium Skills Funds). Quick to adapt and passionate, he is an outstanding teacher who manages to transfer his diverse and strong IT knowledge while instilling good humor and friendliness within the group!"</p></div>
+            </div>
+            <div class="mySlides" style="text-align: center">
+              <img class="mx-auto rounded-circle" src="assets/img/team/christophe.jpg" style="width:200px">
+              <p class="text-muted"></p>
+                <h4>Christophe Tytgat</h4>
+               <p class="text-muted">Secretary General @SeaEurope</p>
+              <div style="min-height: 200px"><p class="text-muted">"I have had the real pleasure to cooperate with Rémi on two ground-breaking projects for the maritime transport sector. Rémi has a great working capacity, a listening ear and a lot of empathy. His to-the-point advice always proved to be of great assistance in moving forward on difficult points. Besides, he is also a great character with a great sense of humor!"</p></div>
+            </div>
+            <div class="mySlides" style="text-align: center">
+              <img class="mx-auto rounded-circle" src="assets/img/team/jean.jpg" style="width:200px">
+              <p class="text-muted"></p>
+                <h4>Jean De Preter</h4>
+               <p class="text-muted">Communication Manager @PSCE</p>
+              <div style="min-height: 200px"><p class="text-muted">"Rémi is an excellent trainer who transfers his knowledge with passion and humility and truly shares his expertise in a structured way. He is a real team-player with strong communications skills who puts all his energy in the success of his projects!"</p></div>
+            </div>
+   
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            
             </div>
         </section>
         <!-- Interests-->
@@ -412,7 +589,7 @@
                             <i class="fas fa-circle fa-stack-2x text-primary2"></i>
                             <i class="fas fa-heartbeat  fa-stack-1x"></i>
                         </span>
-                        <h4 class="my-3">Sport</h4>
+                        <h4 class="my-3">Dancing</h4>
                     </div>
                 </div>
             </div>
@@ -448,7 +625,7 @@
                                     <h2 class="text-uppercase">PARAFLOW</h2>
                                     <p class="item-intro text-muted">Showcase of Our Virtual Reality Paragliding Simulator</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/08bis-full.jpg" alt="" />
-                                    <p style="text-align: left">As Project Manager for the <a href="http://www.laras.be/" https://www.ilovescience.brussels/fr/homepage-fr>Research Laboratory in Arts and Science (LARAS)</a>, I successfully secured fundings from the Brussels Region to participate to the <a href="https://www.ilovescience.brussels/fr/homepage-fr">I Love Science Festival</a>, an event designed to promote sciences towards youngsters, and present ParaFlow, our virtual reality paragliding simulator!<br><br>I was responsible for the the communication as well as the financial and administrative management and reporting of the project. The aim of the project was to have fun while learning some useful concepts : together with the presentation of our paragliding demonstrator, we developed some educational materials linked to the flying experience, the technologies we used to create it (virtual reality programming with C# and Unity, 3D printing for controllers, fan to simulate wind) and organised 10 minutes Q&amp;A sessions prior to flying the simulator.</p>
+                                    <p style="text-align: left">As Project Manager for the <a href="http://www.laras.be/" https://www.ilovescience.brussels/fr/homepage-fr>Research Laboratory in Arts and Science (LARAS)</a>, I successfully secured fundings from the Brussels Region to participate to the <a href="https://www.ilovescience.brussels/fr/homepage-fr">I Love Science Festival</a>, an event designed to promote sciences towards youngsters, and present ParaFlow, our virtual reality paragliding simulator!<br><br>I was responsible for the communication as well as the financial and administrative management and reporting of the project. The aim of the project was to offer a fun experience while learning some useful concepts : together with the presentation of our paragliding demonstrator, we developed some educational materials linked to the flying experience, the technologies we used to create it (virtual reality programming with C# and Unity, 3D printing for controllers, fan to simulate wind) and organised 10 minutes Q&amp;A sessions prior to flying the simulator.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/bannerParaflow.jpg" alt="" />
                                     <p style="text-align: left">As part of this materials, I also produced an original animation using Unity to explain how to fly with the simulator.<br><br>To maximise outreach, on top of our digital campaign, we also managed to get featured in a Belgian popular kid TV show.</p>
                                         <div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/xg-A5Hr1gwY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
@@ -482,7 +659,9 @@
                                     <h2 class="text-uppercase">ROLLER COASTER Z</h2>
                                     <p class="item-intro text-muted">In-house Roller Coaster Prototype</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/plateforme-full.jpg" alt="" />
-                                    <p style="text-align: left">As a Developer at LARAS, I was tasked with developing a demonstrator using a Motion Platform designed by <a href="https://motionsystems.eu/product/motion-platforms/ps-3tm-lp550/">Motion Systems</a> and came up with Roller Coaster Z, a virtual reality roller coaster simulation taking place on Mars!<br><br>Working with C# and Unity, I created an original ride, augmented with a DMX-based fan to create an immersive and fun experience for our students and visitors.<br><br>Roller Coaster Z was featured at the XR MeetUp (@IRISIB on May 2019), the gathering of European VR professionals, and was met with great enthousiasm!</p>
+                                    <p style="text-align: left">As a Developer at LARAS, I was tasked with developing a demonstrator using a Motion Platform designed by <a href="https://motionsystems.eu/product/motion-platforms/ps-3tm-lp550/">Motion Systems</a> and came up with Roller Coaster Z, a virtual reality roller coaster simulation taking place on Mars!<br><br>Working with C# and Unity, I created an original ride, augmented with a DMX-based fan to create an immersive and fun experience for our students and visitors.<br>
+                                        <img src="/assets/img/portfolio/RollerCoasterZ.gif">
+                                        <br>Roller Coaster Z was featured at the XR MeetUp (@IRISIB on May 2019), the gathering of European VR professionals, and was met with great enthousiasm!</p>
                                     <ul class="list-inline">
                                         <li>Date: May 2019</li>
                                         <li>Position : Developer</li>
@@ -515,7 +694,7 @@
                                     <p style="text-align: left">As acting Policy Officer responsible for Maritime Transport at the European Transport Workers' Federation, I carried out a 3-steps political campaign aimed at ensuring that workers' interests would be taken into account when shaping the future of EU Maritime Transport : </p>
                                     <ul style="text-align: left">
                                         <li>Step 1: <a href="https://www.etf-europe.org/resource/etf-response-to-the-public-consultation-on-the-mid-term-review-of-the-eu-maritime-transport-strategy/">ETF Response to the Public Consultation on the Mid-Term Review of the EU Maritime Transport Strategy</a> - Position paper answering the questions of the European Commission as how our particular members (seafarers from all over Europe) viewed the future of EU maritime transport, and what priorities should the Commission embrace to ensure quality shipping.</li>
-                                        <li>Step 2: <a href="https://www.etf-europe.org/resource/etf-manifesto-on-a-social-agenda-for-quality-shipping-in-europe/">ETF Manifesto on a Social Agenda for Quality Shipping in Europe</a> - Shorter position paper setting out the priorities of the ETF Maritime Transport Section in the future, aimed at other interests groups and the press.</li>
+                                        <li>Step 2: <a href="https://www.etf-europe.org/resource/etf-manifesto-on-a-social-agenda-for-quality-shipping-in-europe/">ETF Manifesto on a Social Agenda for Quality Shipping in Europe</a> - Shorter position paper setting out the priorities of the ETF Maritime Transport Section for the future, aimed at other interests groups and the press.</li>
                                         <li>Step 3: <a href="https://www.ecsa.eu/images/NEW_Position_Papers/MARITIME%20STRATEGY%20MID_Final_Joint%20position.pdf">Joint Workers-Employers Position on the Mid-Term Review of the EU Maritime Transport Strategy</a> - Position paper secured after lenghty negociations with the employers' representative organisation (ECSA). Paper adopted in the context of the EU Social Dialogue, and in which we outline our common views on what the future of maritime transport should look like.</li>
                                     </ul>
                                       <ul class="list-inline">
@@ -549,11 +728,11 @@
                                      <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/handshake-c-pxhere.jpg" alt="" />
                                     <p style="text-align: left">In the last three years at the LARAS, I have secured a number of public-funded projects in the fields of applied research and promotion of science:</p>
                                     <ul class="list-inline" style="text-align: left">
-                                        <li>- 2 Science Promotion projects <a href="http://www.laras.be/research.php">(ILSF)</a>for a total of 70.000 euros</li>
+                                        <li>- 2 Science Promotion projects <a href="http://www.laras.be/research.php">(ILSF)</a> for a total of 70.000 euros</li>
                                         <li>- 1 Applied Research project <a href="http://www.laras.be/research.php">(AHIA)</a>: 250.000 euros</li>
                                         <li>- 1 Social Promotion project : 6.000 euros</li>
                                     </ul>
-                                    <p style="text-align: left">I have also led the effort aiming at securing the public procurement offered by Bruxelles Formation to organise 24 trainings in IT for the next 4 years, for an estimated amount of 500.000 euros. I oversaw the writing of our bid, wrote the administrative and financial part as well as the curriculum for one of the training on Basics of Coding (assessed 95% by Bruxelles Formation and awarded to us).</p>
+                                    <p style="text-align: left">I have also led the effort aiming at securing the public procurement offered by Bruxelles Formation to organise 24 trainings in IT for the next 4 years, for an estimated amount of 750.000 euros. I oversaw the writing of our bid, wrote the administrative and financial part as well as the course curriculum for the training ession on Basics of Coding (assessed 95% by Bruxelles Formation and awarded to us).</p>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>
                                         Close Project
@@ -587,8 +766,8 @@
                                     <p  style="text-align: left">I have also trained teenagers on Raspberry and Robotics during an 15-days Electronic Summer Camp organised by Interface3 : they had the opportunity to discover 3d modelling and learn the basics of coding and robotics. Based on the CamJam EduKit project, the participants built a robot and used Python to code their robots' behaviours.</p>
                                     <ul class="list-inline">
                                         <li>Date: September 2019-February 2021</li>
-                                        <li>xxx</li>
-                                        <li>xxx</li>
+                                        <li>Languages : C# with Visual Studio and Unity, Python with PyCharm</li>
+                                        <li>Technology : RaspberryPi</li>
                                     </ul>
                                     <button class="btn btn-primary" data-dismiss="modal" type="button">
                                         <i class="fas fa-times mr-1"></i>
@@ -649,5 +828,33 @@ and Marseille) to present the training toolkit to seafarers, disseminate its res
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+        </script>
     </body>
 </html>
