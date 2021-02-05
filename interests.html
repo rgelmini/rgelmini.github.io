@@ -5,31 +5,75 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>My interactive CV - INTERESTS</title>
     </head>
-  <body class="mainStyle">
-        <div class="topnav" id="myTopnav">
-        <a class="active" href="https://rgelmini.github.io/">Home</a>
-        <a href="https://rgelmini.github.io/jobs">Jobs</a>
-        <a href="https://rgelmini.github.io/education">Education</a>
-        <a href="https://rgelmini.github.io/interests">Interests</a>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-                </a>
-    </div>
-      <h1>INTERESTS</h1>
-      <p>Instructions</p>  
-      <p>HTML code for WebGL Unity Build</p>        
-  </body>
+    <body>
+    <!--label>Nom</label><input type="text" name="nom" id="nom"/>
+    <label>Prenom</label><input type="text" name="prenom" id="prenom"/>
 
-     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <button onclick="display()">Connectez vous</button>
+    <table style="display: none" id="text">
+        <tr>
+        <th>Patient</th>
+        <th>Médecin Traitant</th>
+        <th>Soins</th>
+        <th>Date fin prescription</th>
+        <th><input type="radio" id="vu" value="vu" onclick="vu()"><label>Vu</label><br></th>
+            
+      </tr>
+      <tr>
+        <td>Jill Smith</td>
+        <td>Jean Prodo</td>
+        <td>xxx</td>
+        <td>27/02/2021</td>
+      </tr>
+      <tr>
+        <td>Eve Jackson</td>
+        <td>Jean Prodo</td>
+        <td>xxx</td>
+        <td>27/02/2021</td>
+      </tr>
+    </table>
+    <p style="display: none" id="text2">blablabla2</p>
+    <p style="display: none" id="text3">blablabla3</p!-->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSevvCSnG8s_NlMQpOO0eaDdVPB220goQaZm7BBICNVT4vPS_A/viewform?embedded=true" width="850" height="750" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </body>
     <script>
-        function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-            x.className += " responsive";
-        } else {
-        x.className = "topnav";
+        function vu()
+        {            
+            var text3 = document.getElementById('text3');
+            var button = document.getElementById('vu');
+            var name = document.getElementById('nom');
+            var surname = document.getElementById('prenom');
+            if(button.checked){
+                text3.style.display = "block";
+                JSON.stringify(new String(name.value + surname.value + "a consulté"))}
+            
         }
-}
-</script>
+        function display(){
+            var name = document.getElementById('nom');
+            var surname = document.getElementById('prenom');
+            var text = document.getElementById('text');
+            var text2 = document.getElementById('text2');
+            if (name.value == "X" && surname.value == "X")
+                {
+                    text.style.display = "block";
+
+                }
+            else
+                {
+                    text.style.display = "none";
+                }
+            if (name.value == "Y" && surname.value == "Y")
+                {
+                    text2.style.display = "block";
+
+                }
+            else
+                {
+                    text2.style.display = "none";
+                }
+        }
+        
+         
+    </script>
+         <!-- First question -->
 </html>
